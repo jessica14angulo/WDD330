@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Jessica Angulo Portfolio
+        in WDD 330: Web Frontend Development II at Brigham Young University - Idaho">
+    <title>Week 1</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <ul class="part1">
+        <li>Version Control is a method of recording changes made to a file; it allows us to come back to previous versions of that same code.</li>
+        <li>There are two types of VC: Centralized, which has a central server and the team mates send the info and changes there, and distributed in which every team mate clone the file from the central server and work on it discussing the changes to submit.</li>
+        <li>Git is a distributed Version Control System. (It uses clone, add, commit, push, etc.)</li>
+        <li>Github is the code sharing and publishing service. It is a website that hosts git repositories</li>
+        <li>Repositories is where all the commits are contained.</li>
+        <li>Git files can be in 3 states: Modified, when you change some code, Staged, when you save your changes and the file is waiting to be submitted to Github; it is a great time to test without changing the repo and Commited, when the file has arrived to Github/repo and is saved there.</li>
+        <li>Workflow is a sequence of steps to complete a task.</li>
+        <li>A Git branch is an independent line where you can experiment features without changing the base code.</li>
+        <li>Git merge integrates branches and creates a commit while Git rebase moves a branch up to a new base commit</li>
+    </ul>
+
+    <div class="part2">
+        <h2>Master Mobile UX</h2> 
+        <ul>
+            <li>“The simple guideline is whatever you are doing – do it mobile first” – Eric Schmidt (Google)</li> 
+            <li>Desktop is not as popular as it was before 2011, people prefer to spend time on their phones instead of their laptops, phones came to stay so they won’t go in a long time.</li> 
+            <li>Responsive Retrofitting is turning your program which you already have into mobile, it can be cheaper but it will never address all mobile view problems. RESPONSIVE /= MOBILE FIRST</li> 
+            <li>Making our website/application mobile first can be more expensive but it provides best experience across more devices, it addresses problems that may occur in mobile view and it is prepared to grow and improve in the future.</li> 
+            <li>Understanding users: 1. Be there, when the users need help, if you don’t, they will find another to help them. 2. Be Useful, you have to satisfy the users need in order to make them stay. 3. Be quick, in what the user wants</li> 
+            <li>Reachability matters in order to deliver functions easier to the user</li> 
+            <li>Speed matters, so in order to increase your website speed you can avoid using unnecessary images, if you have to use SVG/Webfonts and minify CSS and JS files.</li> 
+            <li>Placement matters it creates a perception of speed, satisfaction, address reachability issues, etc.</li> 
+            <li>Forms. For more friendly forms we can user the labels inside the forms, to avoid confusion we can put floating labels inside the input. Autocomplete can make it much faster to fill the form and don’t make it long. If you are asking for numbers display the number pad.</li> 
+            <li>Adds. Shouldn’t take up to 40% of the real state, keep it simple and effective. DO NOT USE POP-UPS/POP-OVERS</li> 
+        </ul>
+        
+
+        <h2>Ch12: Object-Oriented Programming in JavaScript.</h2> 
+        
+        <p>Object-oriented programming (OOP for short) is a style of programming that involves separating the code into objects that have properties and methods. It has the benefit of keeping related pieces of code encapsulated in objects that maintain state throughout the life of the program. There are three main concepts in OOP: encapsulation, polymorphism and inheritance.</p> 
+        <p>•	Encapsulation</p> 
+        <p>In OOP, this involves keeping all the programming logic inside an object and making methods available to implement the functionality, without the outside world needing to know how it’s done.</p> 
+        <p>•	Polymorphism</p> 
+        <p>In OOP, this means various objects can share the same method, but also have the ability to override shared methods with a more specific implementation.</p> 
+        <p>•	Inheritance</p> 
+        <p>In OOP, this means we can take an object that already exists and inherit all its properties and methods. We can then improve on its functionality by adding new properties and methods.</p> 
+        <h3>Classes</h3> 
+        <p>Many object-oriented languages, such as Java and Ruby, are known as class-based languages. JavaScript didn't have classes before ES6, and used the concept of using actual objects as the blueprint for creating more objects. This is known as a prototype-based language.</p> 
+
+
+         <h3>Constructor Functions</h3>
+         <div class="code">
+            <p>const Dice = function(sides=6){</p> 
+            <p>this.sides = sides;</p> 
+            <p>this.roll = function() {</p> 
+            <p>return Math.floor(this.sides * Math.random() + 1)}}</p> 
+        </div>
+        
+        <h3>ES6 Class Declarations</h3> 
+        <p>ES6 introduced the new class declaration syntax that does exactly the same thing as a constructor function, but looks much similar to writing a class in a class-based programming language. </p> 
+        <div class="code">
+            <p>class Dice {</p>    
+            <p>constructor(sides=6) {</p>    
+            <p>this.sides = sides;}</p>  
+
+            <p>roll() {</p>    
+            <p>return Math.floor(this.sides * Math.random() + 1)}}</p>        
+        </div>
+        
+        <h3>The Constructor Property</h3> 
+        <p>All objects have a constructor property that returns the constructor function that created it:</p> 
+        <div class="code">
+            <p>blueDice.constructor</p> 
+        <p><< [Function: Dice]</p> 
+        </div>
+        
+        <h3>Prototype</h3> 
+        <p>It should be used to define any properties that will remain the same for every instance of the class.</p> 
+        <div class="code">
+        <p>Turtle.prototype.food = 'Pizza';</p>    
+        <p>Example:</p>    
+        <p>const mike = new Turtle('Michelangelo');</p>    
+        </div>
+        
+        <div class="code">
+        <p>mike.eat();</p>    
+        <p><< 'Mmm, this Pizza tastes great!'</p>    
+
+        <p>mike.weapon = 'Nunchakus';</p>    
+        <p><< 'Nunchuks'</p>     
+
+        <p>mike.attack();</p>     
+        <p><< 'Feel the power of my Nunchakus!'</p>     
+        </div>
+        
+        <h3>Public and Private Methods</h3> 
+        The _color property is created as a variable inside the scope of the constructor function inside the class declaration. This makes it impossible to access outside of this scope.
+        <h3>Object-Based Inheritance</h3> 
+        const Superhuman = Object.create(Human);
+        Superhuman.change = function() {
+        return `${this.realName} goes into a phone box and comes out as ${this.name}!`;};
+            
+        <div class="code">
+        <p>Superhuman.name = 'Name Needed';</p>    
+        <p><< 'Name Needed'</p>
+        <br>
+        <p>Superhuman.realName = 'Real Name Needed';</p>
+        <p><< 'Real Name Needed'</p>
+        <br>
+        <p>const superman = Object.create(Superhuman);</p>
+        <p>superman.name = 'Superman';</p>
+        <p>superman.realName = 'Clark Kent';</p>
+
+        <p>superman.change()</p>
+        <p><< Clark Kent goes into a phone box and comes out as Superman!</p>
+        </div>
+        
+        <h2>Object Methods, "This" </h2>.
+        <ul>
+            <li>A function that is a property of an object is called its method.</li>
+            <li>To access the object, a method can use the “this” keyword. The value of this is defined at run-time.</li>
+            <li></li>When a function is declared, it may use this, but that this has no value until the function is called.
+            <li></li>A function can be copied between objects.
+            <li></li>When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+        </ul>
+        <h2>Ch15: Modern JavaScript</h2> 
+        <h3>Modular JavaScript</h3>
+        <p>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. This helps to keep code organized in separate, reusable files, which improves code maintainability. They should have one purpose.</p> 
+        <ul>
+            <li>A module has its own global scope, so any variables created in the top-level of a module can only be accessed within that module.</li>
+            <li>The value of this in the top level of a module is undefined, rather than the global object.</li>
+        </ul>
+        <p>To export modules we can use export{} after defining the functions: </p> 
+        <div class="code">
+            <p>function variance(array) {</p>
+                <p>return sum(array,square)/array.length - square(mean(array))}</p>
+        <br>
+        <p>function mean(array) {</p>
+            <p>return sum(array) / array.length;}</p>
+        <br>
+        <p></p>export {
+            <p>variance,</p>
+            <p>mean}</p>
+        </div>
+        
+        <p>And to import these functions we can use import{}:</p>
+        <div class="code">
+           <p>import  { mean, variance } from './stats.js';</p> 
+           <p>If there are lots of values and functions that need to be imported, then everything in a module file can be imported using the wildcard symbol *:</p>
+           <p>import * as stats from './stats.js';</p>
+        </div> 
+    </div>
+</body>
+</html>
