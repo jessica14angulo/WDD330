@@ -17,7 +17,12 @@
 
 </head>
 <body>
+    <header>
+        <img src="images/jessicaProfile.jpg" alt="Jessica profile photo">
+        <h1>Jessica L. Angulo</h1> 
+    </header>
     <ul class="part1">
+        <h1>Part 1</h1>
         <li>Version Control is a method of recording changes made to a file; it allows us to come back to previous versions of that same code.</li>
         <li>There are two types of VC: Centralized, which has a central server and the team mates send the info and changes there, and distributed in which every team mate clone the file from the central server and work on it discussing the changes to submit.</li>
         <li>Git is a distributed Version Control System. (It uses clone, add, commit, push, etc.)</li>
@@ -30,6 +35,7 @@
     </ul>
 
     <div class="part2">
+        <h1>Part 2</h1>
         <h2>Master Mobile UX</h2> 
         <ul>
             <li>“The simple guideline is whatever you are doing – do it mobile first” – Eric Schmidt (Google)</li> 
@@ -104,11 +110,14 @@
         </div>
         
         <h3>Public and Private Methods</h3> 
-        The _color property is created as a variable inside the scope of the constructor function inside the class declaration. This makes it impossible to access outside of this scope.
+        <p>The _color property is created as a variable inside the scope of the constructor function inside the class declaration. This makes it impossible to access outside of this scope.</p> 
         <h3>Object-Based Inheritance</h3> 
-        const Superhuman = Object.create(Human);
-        Superhuman.change = function() {
-        return `${this.realName} goes into a phone box and comes out as ${this.name}!`;};
+        <div class="code">
+        <p>const Superhuman = Object.create(Human);</p>    
+        <p> Superhuman.change = function() {</p>   
+        <p>return `${this.realName} goes into a phone box and comes out as ${this.name}!`;};</p>    
+        </div>
+        
             
         <div class="code">
         <p>Superhuman.name = 'Name Needed';</p>    
@@ -160,5 +169,14 @@
            <p>import * as stats from './stats.js';</p>
         </div> 
     </div>
+    <footer>
+        <section class="copyrigth">
+            <h2> &copy; <span id="currentyear"></span> .:|:. Jessica L. Angulo .:|:. Cochabamba</h2>
+        </section>
+        <section class="lastupdated">
+            <h2>Last Updated: <span id="lastmodified"></span></h2>
+        </section>
+    </footer>
+    <script src="js/homepage.js"></script>
 </body>
 </html>
