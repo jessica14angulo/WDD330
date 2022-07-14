@@ -87,7 +87,7 @@
         <p>All objects have a constructor property that returns the constructor function that created it:</p> 
         <div class="code">
             <p>blueDice.constructor</p> 
-        <p><< [Function: Dice]</p> 
+        <p>< [Function: Dice]</p> 
         </div>
         
         <h3>Prototype</h3> 
@@ -100,13 +100,13 @@
         
         <div class="code">
         <p>mike.eat();</p>    
-        <p><< 'Mmm, this Pizza tastes great!'</p>    
+        <p>< 'Mmm, this Pizza tastes great!'</p>    
 
         <p>mike.weapon = 'Nunchakus';</p>    
-        <p><< 'Nunchuks'</p>     
+        <p>< 'Nunchuks'</p>     
 
         <p>mike.attack();</p>     
-        <p><< 'Feel the power of my Nunchakus!'</p>     
+        <p>< 'Feel the power of my Nunchakus!'</p>     
         </div>
         
         <h3>Public and Private Methods</h3> 
@@ -121,26 +121,26 @@
             
         <div class="code">
         <p>Superhuman.name = 'Name Needed';</p>    
-        <p><< 'Name Needed'</p>
+        <p>< 'Name Needed'</p>
         <br>
         <p>Superhuman.realName = 'Real Name Needed';</p>
-        <p><< 'Real Name Needed'</p>
+        <p>< 'Real Name Needed'</p>
         <br>
         <p>const superman = Object.create(Superhuman);</p>
         <p>superman.name = 'Superman';</p>
         <p>superman.realName = 'Clark Kent';</p>
 
         <p>superman.change()</p>
-        <p><< Clark Kent goes into a phone box and comes out as Superman!</p>
+        <p>< Clark Kent goes into a phone box and comes out as Superman!</p>
         </div>
         
         <h2>Object Methods, "This" </h2>.
         <ul>
             <li>A function that is a property of an object is called its method.</li>
             <li>To access the object, a method can use the “this” keyword. The value of this is defined at run-time.</li>
-            <li></li>When a function is declared, it may use this, but that this has no value until the function is called.
-            <li></li>A function can be copied between objects.
-            <li></li>When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+            <li>When a function is declared, it may use this, but that this has no value until the function is called.</li>
+            <li>A function can be copied between objects.</li>
+            <li>When a function is called in the “method” syntax: object.method(), the value of this during the call is object.</li>
         </ul>
         <h2>Ch15: Modern JavaScript</h2> 
         <h3>Modular JavaScript</h3>
