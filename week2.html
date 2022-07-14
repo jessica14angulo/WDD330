@@ -144,13 +144,120 @@
             invoke the callback function after every given number of milliseconds. To stop this, we can use the
             window.clearInterval() method and the variable repeat as an argument.</p>
         <h3>MDN The Content Template Element</h3>
-        <p>The HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.</p>
+        <p>The HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded
+            but may be instantiated subsequently during runtime using JavaScript.</p>
         <h2>Attributes</h2>
         <p>However, the HTMLTemplateElement has a content property, which is a read-only DocumentFragment containing the
             DOM subtree which the template represents.</p>
         <h3>Avoiding DocumentFragment pitfall</h3>
         <p>A DocumentFragment is not a valid target for various events, as such it is often preferable to clone or refer
             to the elements within it.</p>
+    </div>
+    <div class="part2">
+        <h1>Part 2</h1>
+        <h2>Ch10: Testing and Degugging</h2>
+        <p>Errors, Exceptions, and Warnings There are typically 3 types of errors:</p>
+        <ul>
+            <li>System error ― there’s a problem with the system or external devices with which the program is
+                interacting.</li>
+            <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as
+                a typo.</li>
+            <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
+        </ul>
+        <p>An exception is an error that produces a return value that can then be used by the program to deal with the
+            error. Like trying to call a method that is nonexistent. An exception will also produce a stack trace. This
+            is a sequence of functions or method calls that lead to the point where the error occurred.</p>
+        <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. This
+            means the program will continue to run after a warning.</p>
+        <h3>Strict Mode</h3>
+        <p>To see it in action, if you try to assign a value to a variable that is undeclared in strict mode, you'll get
+            an exception, instead of a warning, it can also be used inside functions only:</p>
+        <div class="code">
+            <p>'use strict';</p>
+            <p>e = 2.718;</p>
+            <p>ReferenceError: e is not defined</p>
+        </div>
+        <h3>Linting Tools</h3>
+        <p>Linting tools such as JS Lint,JS Hint, and ES Lint can be used to test the quality of JavaScript code, beyond
+            simply using strict mode. Passing a lint test is no guarantee that your code is correct, but it will mean it
+            will be more consistent and less likely to have problems.</p>
+        <h3>Feature Detection</h3>
+        <p>The recommended way to determine browser support for a feature is to use feature detection. This is done
+            using an if statement to check whether an object or method exists before trying to actually call the method.
+        </p>
+        <h3>Debugging in the Browser</h3>
+        <p>It can be useful to create what are known as breakpoints, which halt the progress of the code and allow us to
+            view the value of different variables at that point in the program.</p>
+        <h3>The Trusty Alert</h3>
+        <p>The most basic form of debugging is to use the alert() method to show a dialog at certain points in the code:
+        </p>
+        <div class="code">
+            <p>function amIOldEnough(age){</p>
+            <p>if (age < 12) {</p> <p>alert(age);</p>
+            <p>return 'No, sorry.';</p>
+            <p>} else if (age < 18) {</p> <p>return 'Only if you are accompanied by an adult.';}</p>
+            <p>else {</p>
+            <p>return 'Yep, come on in!';}}</p>
+        </div>
+        <h3>Using the Console</h3>
+        <p>console.log() method can be used to log the value of variables at different stages of the program, although
+            it will not actually stop the execution of the program in the same way as alert() does.</p>
+        <h3>Debugging Tools</h3>
+        <p>One of the most useful commands is the debugger keyword. This will create a breakpoint in your code that will
+            pause the execution of the code and allow you to see where the program is currently up to.</p>
+        <h3>Throwing Exceptions</h3>
+        <p>It’s also possible to throw your own exceptions using the throw statement. The throw statement can be applied
+            to any JavaScript expression, causing the execution of the program to stop: throw new Error('Something has
+            gone badly wrong!');</p>
+        <h3>try, catch, and finally</h3>
+        <p>If we suspect a piece of code will result in an exception, we can wrap it in a try block. This will run the
+            code inside the block as normal, but if an exception occurs it will pass the error object that is thrown
+            onto a catch block.</p>
+        <p>A finally block can be added after a catch block. This will always be executed after the try or catch block,
+            regardless of whether an exception occurred or not.</p>
+        <h2>How Single-Page Applications Work</h2>
+        <p>A single-page application (SPA) is a website that re-renders its content in response to navigation actions
+            (e.g. clicking a link) without making a request to the server to fetch new HTML. Internal state SPAs are
+            limited because there is only one “entry”. A single entry means that you always start at the root when you
+            enter the application. With location-based SPAs, you can share a link and be confident that anyone opening
+            that link will see the same thing as you because the location is always updating as you navigate.</p>
+        <h3>Location Primer</h3>
+        <p>While the URL in the address bar is what users see and interact with, SPAs use window.location. This allows
+            you to interact with the different parts of the URL without having to parse it yourself.</p>
+        <p>When a browser navigates, a request is sent to a server and the browser uses the response to create a
+            Document object. The Document describes the page (the DOM) and provides methods for interacting with it.
+            window.document is a browser tab’s active Document.</p>
+        <p>As you’re clicking links and navigating through pages, the browser tab is building up a session history. If
+            you press the browser’s back button, the browser will use the current entry to determine the “new” current
+            entry (current.index - 1). The “old” current entry’s Document will be unloaded and the “new” current entry’s
+            Document will be loaded.</p>
+        <p>Instead of creating a new Document for every location, the History API re-uses the active Document by
+            updating it to reflect the new location. The History API has three core functions: pushState(),
+            replaceState(), and go(). These (and the rest of the API) are accessed via window.history. </p>
+        <h2>The problem with single page apps</h2>
+        <ul>
+            <li>Configure the server to point all paths on a domain back to the root index.html file. For example,
+                todolist.com and todolist.com/lists should both point to the same file.</li>
+            <li>Suppress the default behavior when someone clicks a link that points to another page in the app.</li>
+            <li>Use more JavaScript—history.pushState()—to update the URL without triggering a page reload.</li>
+            <li>Match the URL against a map of routes, and serve the right content based on it.</li>
+            <li>If your URL has variable information in it (like a todolist ID, for example), parse that data out of the
+                URL.</li>
+            <li>Detect when someone clicks the browser’s back button/forward button, and update the URL and UI.</li>
+            <li>Update the title element on the page.</li>
+            <li>Use even more JavaScript to dynamically focus the content area when the content changes (for
+                screen-reader users).</li>
+        </ul>
+        <h2>The HTML5 template element.</h2>
+        <ul>
+            <li>It doesn't get rendered.</li>
+            <li>tags inside of it don't get run.</li>
+            <li>tags inside of it don't get evaluated.</li>
+            <li>It doesn't load any external resources (so you won't see any requests for the contents of img or embed
+                tags).</li>
+            <li>It can be accessed as a DocumentFragment instance via the special content property of the template
+                element.</li>
+        </ul>
     </div>
 
     <footer>
