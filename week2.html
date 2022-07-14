@@ -1,16 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 1 Notes</title>
+    <meta name="description" content=" Jessica Angulo Portfolio
+        in WDD 330: Web Frontend Development II at Brigham Young University - Idaho">
+    <title>Week 2</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="images/favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    
+    <header>
+        <img src="images/jessicaProfile.jpg" alt="Jessica profile photo">
+        <h1>Jessica L. Angulo</h1>
+    </header>
+    <div class="part1">
+        <h1>Part 1</h1>
+        <h2>Ch9: The Window Object</h2>
+        <p>In a browser environment the global object is the window object, which represents the browser window that
+            contains a web page.</p>
+        <h3>The Browser Object Model</h3>
+        <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain
+            information about the browser and computer screen. Every browser window, tab, popup, frame, and iframe has a
+            window object.</p>
+        <p>If you don’t know the name of the global object, you can also refer to it using the keyword this in the
+            global scope:</p>
+        <div class="code">
+            <p>from within the global scope</p>
+            <p>const global = this;</p>
+        </div>
+        <p>Global variables are variables that are created without using the const, let or var keywords. Global
+            variables can be accessed in all parts of the program. Any global variable created is actually a property of
+            the window object. In general, you should refer to global variables without using the window object.</p>
+        <h3>Dialogs</h3>
+        <p>There are three functions that produced dialogs in the browsers: alert(), confirm() and prompt().</p>
+        <ul>
+            <li>The window.alert() method will pause the execution of the program and display a message in a dialog box:
+                window.alert('Hello')</li>
+            <li>The window.confirm() method will stop the execution of the program and display a confirmation dialog
+                that shows the message provided as an argument, and giving the options of OK or Cancel:
+                window.confirm('Do you wish to continue?');. window.confirm() dialog can be used as a final check to see
+                if a user wants to delete a resource.</li>
+            <li>The window.prompt() method will stop the execution of the program. It displays a dialog that shows a
+                message provided as an argument, as well as an input field that allows the user to enter text:
+                window.prompt('Please enter your name:');</li>
+        </ul>
+        <h3>Browser Information</h3>
+        <p>The window object has a navigator property that returns a reference to the Navigator object. The Navigator
+            object contains information about the browser being used. </p>
+        <p>window.navigator.userAgent</p>
+        <p>The window.location property is an object that contains information about the URL of the current page.</p>
+
+        <div class="code">
+            <p>window.location.href </p>
+            <p>https://www.sitepoint.com/premium/books/javascript-novice-to-ninja</p>
+        </div>
+        <p>The protocol property returns a string describing the protocol used (such as http, https, pop2, ftp etc.).
+        </p>
+        <div class="code">
+            <p> window.location.protocol </p>
+            <p>"https:"</p>
+        </div>
+        <p>The host property returns a string describing the domain of the current URL and the port number:</p>
+        <div class="code">
+            <p>window.location.host</p>
+            <p>www.sitepoint.com</p>
+        </div>
+        <p>The hostname property returns a string describing the domain of the current URL:</p>
+        <div class="code">
+            <p>window.location.hostname</p>
+            <p> "www.sitepoint.com"</p>
+        </div>
+        <p>The port property returns a string describing the port number, although it will return an empty string if the
+            port is not explicitly stated in the URL:</p>
+        <div class="code">
+            <p>window.location.port""</p>
+        </div>
+        <p>The pathname property returns a string of the path that follows the domain:</p>
+        <p>The search property returns a string that starts with a “?” followed by the query string parameters. It
+            returns an empty string if there are no query string parameters. </p>
+        <div class="code">
+            <p>window.location.search</p>
+            <p>"?q=javascript&limit=24&offset=0&page=1&</p>
+            <p>content_types[]=All&slugs[]=all&states[]=available&order="</p>
+        </div>
+        <p>The hash property returns a string that starts with a “#” followed by the fragment identifier. It returns an
+            empty string if there is no fragment identifier:</p>
+        <p>The origin property returns a string that shows the protocol and domain where the current page originated
+            from. </p>
+        <p>The window.location object also has the following methods:</p>
+        <ul>
+            <li>The reload() method can be used to force a reload of the current page. It will force the browser to
+                reload the page from the server.</li>
+            <li>The assign() method can be used to load another resource from a URL provided as a parameter, for
+                example: </li>
+            <li>The replace() method is almost the same as the assign() method, except the current page will not be
+                stored in the session history, so the user will be unable to navigate back to it using the back button.
+            </li>
+            <li>The toString() method returns a string containing the whole URL:</li>
+        </ul>
+        <h3>The Browser History</h3>
+        <p>The window.history property can be used to access information about any previously visited pages in the
+            current browser session.</p>
+        <p>The window.history.length property shows how many pages have been visited before arriving at the current
+            page.</p>
+        <p>The window.history.go() method can be used to go to a specific page, where 0 is the current page.</p>
+        <p>There are also the window.history.forward() and window.history.back() methods that can be used to navigate
+            forwards and backwards by one page respectively.</p>
+        <h3>Controlling Windows</h3>
+        <p>A new window can be opened using the window.open() method. The close() method can be used to close a window,
+            assuming you have a reference to it. It is also possible to move a window using the window.moveTo() method.
+            You can resize a window using the window.resizeTo() method</p>
+        <h3>Screen Information</h3>
+        <p>The window.screen object contains information about the screen the browser is displayed on. You can find out
+            the height and width of the screen in pixels using the height and width properties. The availHeight and
+            availWidth can be used to find the height and width of the screen, excluding any operating system menus.</p>
+        <h3>The Document Object</h3>
+        <p>The document.write() method simply writes a string of text to the page. If a page has already loaded, it will
+            completely replace the current document.</p>
+        <h3>Cookies</h3>
+        <p>Cookies take the form of a text file that contain a list of name/value pairs separated by semicolons. They
+            can be used for personalizing a user’s browsing experience, storing user preferences, keeping track of user
+            choices (such as a shopping cart), authentication and tracking users.</p>
+        <p>To create a cookie, you assign it to JavaScript’s “cookie jar”, using the document.cookie property.
+            document.cookie = 'name=Superman'; </p>
+        <p>To see the current contents of the cookie jar, simply enter document.cookie. Cookies can be made persistent ―
+            that is, lasting beyond the browser session ― by adding "; expires=date" to the end of the cookie when it’s
+            set, using format Day, DD-Mon-YYYY HH:MM:SS GMT. To remove a cookie, you need to set it to expire at a time
+            in the past: If a cookie is a session cookie, it will expire when the tab or window is closed. </p>
+        <h3>Timing Functions</h3>
+        <p>The window.setTimeout() method accepts a callback to a function as its first parameter and a number of
+            milliseconds as its second parameter.</p>
+        <p>The window.setInterval() method works in a similar way to window.setTimeout(), except that it will repeatedly
+            invoke the callback function after every given number of milliseconds. To stop this, we can use the
+            window.clearInterval() method and the variable repeat as an argument.</p>
+        <h3>MDN The Content Template Element</h3>
+        <p>The <template> HTML element is a mechanism for holding HTML that is not to be rendered immediately when a
+                page is loaded but may be instantiated subsequently during runtime using JavaScript.</p>
+        <h2>Attributes</h2>
+        <p>However, the HTMLTemplateElement has a content property, which is a read-only DocumentFragment containing the
+            DOM subtree which the template represents.</p>
+        <h3>Avoiding DocumentFragment pitfall</h3>
+        <p>A DocumentFragment is not a valid target for various events, as such it is often preferable to clone or refer
+            to the elements within it.</p>
+    </div>
+
+    <footer>
+        <section class="copyrigth">
+            <h2> &copy; <span id="currentyear"></span> .:|:. Jessica L. Angulo .:|:. Cochabamba</h2>
+        </section>
+        <section class="lastupdated">
+            <h2>Last Updated: <span id="lastmodified"></span></h2>
+        </section>
+    </footer>
+    <script src="js/homepage.js"></script>
 </body>
+
 </html>

@@ -58,6 +58,10 @@ footer {
     padding: 1em;
     justify-items: center;
 }
+.code {
+    color: antiquewhite;
+    background-color: black;
+}
 .copyrigth {
     grid-column: 1/3;
     text-align: center;
