@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +17,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <header>
         <img src="images/jessicaProfile.jpg" alt="Jessica profile photo">
-        <h1>Jessica L. Angulo</h1> 
+        <h1>Jessica L. Angulo</h1>
     </header>
     <h1>Part 1</h1>
     <div class="part1">
-        
+        <h2>Ch14: HTML5 APIs</h2>
+        <p>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the
+            browser. The names of these attributes can be decided by the developer, but they must use the following
+            format:</p>
+        <ul>
+            <li>Start with data-.</li>
+            <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.</li>
+            <li>Include an optional string value.</li>
+        </ul>
+        <div class="code">
+            <p>data-powers = 'flight superSpeed'</p>
+            <p>data-rating = '5' </p>
+            <p>data-dropdown </p>
+            <p>data-user = 'DAZ' </p>
+            <p>data-max-length = '32'</p>
+        </div>
+        <h3>Multimedia</h3>
+        <p>An audio clip can be inserted into a page with the <audio> tag, using the src attribute to point to the audio
+                file. A video clip can be inserted with the <video> tag, using the src attribute to point to the movie
+                    file. The controls attribute can be added (without any value) and will display the browser’s native
+                    controls, such as play, pause, and volume control, as can be seen in the screenshot below.</p>
+        <ul>
+            <li>The play event, which fires when the clip starts and when it resumes after a pause</li>
+            <li>The pause event, which fires when the clip is paused.</li>
+            <li>The volumechange event, which fires when the volume is changed.</li>
+            <li>The loadedmetadata event, which we saw in the note above, and which fires when all the video's metadata
+                has loaded.</li>
+        </ul>
+        <h3>Drawing with Canvas</h3>
+        <p>To add a canvas element to a page, the <canvas> tag is used specifying a height and width. Straight lines can
+                be drawn employing the moveTo() and lineTo() methods.</p>
+        <h2>Ch12: Canvas, SVG, and Drag and Drop</h2>
+        <p>The first step to using canvas is to add a canvas element to the page. The text in between the canvas tags
+            will only be shown if the canvas element is not supported by the visitor’s browser.</p>
+        <div class="code">
+            <p>var canvas = document.getElementById("myCanvas"); </p>
+            <p>var context = canvas.getContext("2d"); </p>
+            <p>context.strokeStyle = "red";</p>
+            <p>context.fillStyle = "rgba(0, 0, 255, 0.5)";</p>
+            <p>context.fillRect(10, 10, 100, 100); “fills rectangle”</p>
+            <p>context.strokeRect(10, 10, 100, 100);</p>
+        </div>
+        <h3>Saving Canvas Drawings</h3>
+        <div class="code">
+            <p><button name="saveButton" id="saveButton">Save Drawing</button></p>
+            <p>function saveDrawing() {</p>
+            <p>var canvas5 = document.getElementById("demo5");</p>
+            <p>window.open(canvas5.toDataURL("image/png"));</p>
+            <p>var button = document.getElementById("saveButton");</p>
+            <p>button.addEventListener("click", saveDrawing, false);</p>
+        </div>
+        <h3>SVG</h3>
+        <p>SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe vector graphics
+            using XML. XML stands for eXtensible Markup Language. Like HTML, it’s a markup metalanguage. In plain
+            English, it’s a system meant to annotate text.</p>
+        <h3>Making Elements Draggable</h3>
+        <p>In order to do that, we add the draggable attribute to them, and set the value to true. </p>
+    </div>
+
+    <h1>Part 2</h1>
+    <div class="part2">
+        <h2>An Introduction to Functions, Execution Context and the Call Stack</h2>
+        <ul>
+            <li>When we run our code two main things happen: It stores memory and it executes words with a meaning in an
+                application. </li>
+            <li>Execution context is the fact of going through each line of code, executing what they say and store them
+                in memory.</li>
+            <li>There is global memory where every global variable is store and function level or local memory.</li>
+            <li>JavaScript is a language that is single threatened (goes line by line) and uses synchronous execution.
+            </li>
+            <li>When an output of a function is not yet defined its default value is undefined. Its wait to be execute
+                and then stores the new value there.</li>
+            <li>When we call a function, the result becomes a global variable. Using return keyword.</li>
+            <li>Call Stack is tracking our execution context. It uses some kind of layers to keep track of the program.
+            </li>
+        </ul>
+        <h2>How to understand Callbacks & Higher Order Functions</h2>
+        <ul>
+            <li>The principle of making our functions reusable is to change them or generalize them in order to achieve
+                many tasks with a single function but not overloading it. </li>
+            <li>A function declaration is not executed until it is called or stored in a variable.</li>
+            <li>In JavaScript functions are first-class objects. That means that they have all of the properties of
+                objects. We can pass functions that are just objects into functions. They can be stored in variables;
+                they can be stored as properties of other objects or they can be passed as argument’s inputs into
+                functions and they can be returned as the return value.</li>
+            <li>Functions have one special property that objects don’t have, it is that they can be invoked. But
+                functions, despite being objects, can be invoked.</li>
+            <li> Higher-order function is the outer function that takes in a function, and callback function is the
+                function we pass in.</li>
+            <li>High-order and callback function simplify our code, they keep it DRY so we don’t repeat more code. And
+                they let us run asynchronous code.</li>
+        </ul>
+
     </div>
     <footer>
         <section class="copyrigth">
@@ -35,4 +129,5 @@
     </footer>
     <script src="js/homepage.js"></script>
 </body>
+
 </html>
