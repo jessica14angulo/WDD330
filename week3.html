@@ -22,95 +22,115 @@
     <header>
         <img src="images/jessicaProfile.jpg" alt="Jessica profile photo">
         <h1>Jessica L. Angulo</h1>
+        <h2>WDD 330</h2>
+        <a href="../index.html">Home Page</a>
     </header>
-    <h1>Week 3 Part 1</h1>
-    <div class="part1">
-        <h2>Ch13: AJAX</h2>
-        <p>Ajax (Asynchronous JavaScript and XML) is a technique that allows web pages to communicate asynchronously
-            with a server, and it dynamically updates web pages without reloading. Web pages were no longer static, but
-            dynamic applications.</p>
-        <h3>Clients and Servers</h3>
-        <p>The web of computers known as the internet can be separated into two parts: clients and servers. A client,
-            such as a web browser, will request a resource (usually a web page) from a server, which processes the
-            request and sends back a response to the client. Ajax allows JavaScript to request resources from a server
-            on behalf of the client. The resources requested are usually JSON data or small fragments of text or HTML
-            rather than a whole web page.</p>
-        <h3>The Fetch API</h3>
-        <p>An application programming interface (API) is a collection of methods that allows external access to another
-            program or service. Many websites allow controlled access to their data via public APIs. An application
-            programming interface (API) is a collection of methods that allows external access to another program or
-            service. Many websites allow controlled access to their data via public APIs:</p>
-        <div class="code">
-            <p>fetch('https://example.com/data')</p>
-            <p>.then( // code that handles the response )</p>
-            <p>.catch( // code that runs if the server returns an error )</p>
-            <p>A more complete example: </p>
-            <p>const url = 'https:example.com/data';</p>
-            <p>fetch(url)</p>
-            <p>.then((response) => {</p>
-            <p>if(response.ok) {</p>
-            <p>return response;</p>
-            <p>throw Error(response.statusText);</p>
-            <p>.then( response => // do something with response )</p>
-            <p>.catch( error => console.log('There was an error!') )</p>
+    <main>
+        <h1>Week 3 Part 1</h1>
+        <div class="part1">
+            <h2>Ch13: AJAX</h2>
+            <p>Ajax (Asynchronous JavaScript and XML) is a technique that allows web pages to communicate asynchronously
+                with a server, and it dynamically updates web pages without reloading. Web pages were no longer static,
+                but
+                dynamic applications.</p>
+            <h3>Clients and Servers</h3>
+            <p>The web of computers known as the internet can be separated into two parts: clients and servers. A
+                client,
+                such as a web browser, will request a resource (usually a web page) from a server, which processes the
+                request and sends back a response to the client. Ajax allows JavaScript to request resources from a
+                server
+                on behalf of the client. The resources requested are usually JSON data or small fragments of text or
+                HTML
+                rather than a whole web page.</p>
+            <h3>The Fetch API</h3>
+            <p>An application programming interface (API) is a collection of methods that allows external access to
+                another
+                program or service. Many websites allow controlled access to their data via public APIs. An application
+                programming interface (API) is a collection of methods that allows external access to another program or
+                service. Many websites allow controlled access to their data via public APIs:</p>
+            <div class="code">
+                <p>fetch('https://example.com/data')</p>
+                <p>.then( // code that handles the response )</p>
+                <p>.catch( // code that runs if the server returns an error )</p>
+                <p>A more complete example: </p>
+                <p>const url = 'https:example.com/data';</p>
+                <p>fetch(url)</p>
+                <p>.then((response) => {</p>
+                <p>if(response.ok) {</p>
+                <p>return response;</p>
+                <p>throw Error(response.statusText);</p>
+                <p>.then( response => // do something with response )</p>
+                <p>.catch( error => console.log('There was an error!') )</p>
+            </div>
+            <p>The redirect() method can be used to redirect to another URL. It creates a new promise that resolves to
+                the
+                response from the redirected URL: </p>
+            <p>The text() method takes a stream of text from the response, reads it to completion and then returns a
+                promise
+                that resolves to a USVSting object that can be treated as a string in JavaScript.</p>
+            <h3>Hypertext Transfer Protocol</h3>
+            <ul>
+                <li>GET requests to retrieve resources</li>
+                <li>POST requests, usually used to create a resource but can actually perform any task</li>
+                <li>PUT requests to upsert, which means insert a resource or update it entirely</li>
+                <li>PATCH requests to make partial updates to a resource</li>
+                <li>DELETE requests to delete a resource.</li>
+            </ul>
+            <h3>Headers Interface</h3>
+            <p>has() – Can be used to check if the headers object contains the header provided as an argument. </p>
+            <p>get() - Returns the value of the header provided as an argument. </p>
+            <p>set() – Can be used to set a value of an already existing header, or create a new header with the value
+                provided as an argument if it does not already exist. </p>
+            <p>append() – Adds a new header to the headers object. </p>
+            <p>delete() – Removes the header provided as an argument.</p>
         </div>
-        <p>The redirect() method can be used to redirect to another URL. It creates a new promise that resolves to the
-            response from the redirected URL: </p>
-        <p>The text() method takes a stream of text from the response, reads it to completion and then returns a promise
-            that resolves to a USVSting object that can be treated as a string in JavaScript.</p>
-        <h3>Hypertext Transfer Protocol</h3>
-        <ul>
-            <li>GET requests to retrieve resources</li>
-            <li>POST requests, usually used to create a resource but can actually perform any task</li>
-            <li>PUT requests to upsert, which means insert a resource or update it entirely</li>
-            <li>PATCH requests to make partial updates to a resource</li>
-            <li>DELETE requests to delete a resource.</li>
-        </ul>
-        <h3>Headers Interface</h3>
-        <p>has() – Can be used to check if the headers object contains the header provided as an argument. </p>
-        <p>get() - Returns the value of the header provided as an argument. </p>
-        <p>set() – Can be used to set a value of an already existing header, or create a new header with the value
-            provided as an argument if it does not already exist. </p>
-        <p>append() – Adds a new header to the headers object. </p>
-        <p>delete() – Removes the header provided as an argument.</p>
-    </div>
 
-    <h1>Week 3 Part 2</h1>
-    <div class="part2">
-        <h2>Forms</h2>
-        <p>Forms are made up of a form element that contains form controls such as input fields, select menus and buttons.</p>
-        <h3>Form Properties and Methods</h3>
-        <p>The form.submit() method will submit the form automatically.</p>
-        <p>The form.reset() method will reset all the form controls back to their initial values specified in the HTML.</p>
-        <p>The form.action property can be used to set the action attribute of a form, so it’s sent to a different URL
-            to be processed on the server.</p>
-        <h3>Form Controls</h3>
-        <ul>
-            <li>input fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
-            <li>select menus for drop-down lists of options</li>
-            <li>textara elements for longer text entry</li>
-            <li>button elements for submitting and resetting forms</li>
-        </ul>
-        <h3>Text Areas</h3>
-        <p>A textarea element is used to enter long pieces of text over multiple lines such as a comment or blog post:
-        </p>
-        <h2>Using FormData Objects Effectively</h2>
-        <ul>
-            <li>None of the inputs will come through a form unless they have a name attribute. </li>
-            <li>Use preventDefault() to prevent the page from reloading.</li>
-        </ul>
-        <h2>MDN: Client-Side Form Validation</h2>
-        <ul>
-            <li>validationMessage: Returns a localized message describing the validation constraints that the control
-                doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is
-                false) or the element's value satisfies its constraints (is valid), this will return an empty string.
-            </li>
-            <li>validity: Returns a ValidityState object that contains several properties describing the validity state
-                of the element. A few of the more common ones:</li>
-            <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise.
-            </li>
-        </ul>
-    </div>
+        <h1>Week 3 Part 2</h1>
+        <div class="part2">
+            <h2>Forms</h2>
+            <p>Forms are made up of a form element that contains form controls such as input fields, select menus and
+                buttons.</p>
+            <h3>Form Properties and Methods</h3>
+            <p>The form.submit() method will submit the form automatically.</p>
+            <p>The form.reset() method will reset all the form controls back to their initial values specified in the
+                HTML.</p>
+            <p>The form.action property can be used to set the action attribute of a form, so it’s sent to a different
+                URL
+                to be processed on the server.</p>
+            <h3>Form Controls</h3>
+            <ul>
+                <li>input fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
+                <li>select menus for drop-down lists of options</li>
+                <li>textara elements for longer text entry</li>
+                <li>button elements for submitting and resetting forms</li>
+            </ul>
+            <h3>Text Areas</h3>
+            <p>A textarea element is used to enter long pieces of text over multiple lines such as a comment or blog
+                post:
+            </p>
+            <h2>Using FormData Objects Effectively</h2>
+            <ul>
+                <li>None of the inputs will come through a form unless they have a name attribute. </li>
+                <li>Use preventDefault() to prevent the page from reloading.</li>
+            </ul>
+            <h2>MDN: Client-Side Form Validation</h2>
+            <ul>
+                <li>validationMessage: Returns a localized message describing the validation constraints that the
+                    control
+                    doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate
+                    is
+                    false) or the element's value satisfies its constraints (is valid), this will return an empty
+                    string.
+                </li>
+                <li>validity: Returns a ValidityState object that contains several properties describing the validity
+                    state
+                    of the element. A few of the more common ones:</li>
+                <li>willValidate: Returns true if the element will be validated when the form is submitted; false
+                    otherwise.
+                </li>
+            </ul>
+        </div>
+    </main>
     <footer>
         <section class="copyrigth">
             <h2> &copy; <span id="currentyear"></span> .:|:. Jessica L. Angulo .:|:. Cochabamba</h2>

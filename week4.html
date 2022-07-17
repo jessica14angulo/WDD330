@@ -22,110 +22,137 @@
     <header>
         <img src="images/jessicaProfile.jpg" alt="Jessica profile photo">
         <h1>Jessica L. Angulo</h1>
+        <h2>WDD 330</h2>
+        <a href="../index.html">Home Page</a>
     </header>
-    <h1>Week 4 Part 1</h1>
-    <div class="part1">
-        <h2>Ch11: Further Functions</h2>
-        <h3>Immediately Invoked Function Expressions</h3>
-        <p>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that, as
-            the name suggests, is invoked as soon as it’s defined. IIFEs are a useful way of performing a task while
-            keeping any variables wrapped up within the scope of the function. This means the global namespace is not
-            polluted with lots of variable names.:</p>
-        <div class="code">
-            <p>(function(){</p>
-            <p>const temp = 'World';</p>
-            <p>console.log(`Hello ${temp}`);})();</p>
-            <p>'Hello World'</p>
+    <main>
+        <h1>Week 4 Part 1</h1>
+        <div class="part1">
+            <h2>Ch11: Further Functions</h2>
+            <h3>Immediately Invoked Function Expressions</h3>
+            <p>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that,
+                as
+                the name suggests, is invoked as soon as it’s defined. IIFEs are a useful way of performing a task while
+                keeping any variables wrapped up within the scope of the function. This means the global namespace is
+                not
+                polluted with lots of variable names.:</p>
+            <div class="code">
+                <p>(function(){</p>
+                <p>const temp = 'World';</p>
+                <p>console.log(`Hello ${temp}`);})();</p>
+                <p>'Hello World'</p>
+            </div>
+            <h3>Temporary Variables</h3>
+            <p>If a variable is only required temporarily, it may cause confusion if it’s still available later in the
+                code.
+                This process requires the use of a temporary variable, called temp, which only exists while the IIFE is
+                invoked.</p>
+            <h3>Promises</h3>
+            <p>A promise represents the future result of an asynchronous operation. Promises don't do anything that
+                can't
+                already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code
+                that
+                can result from using multiple callbacks:</p>
+            <div class="code">
+                <p>const promise = new Promise( (resolve, reject) => {</p>
+                <p>initialization code goes here</p>
+                <p>if (success) {</p>
+                <p>resolve(value);</p>
+                <p>} else {</p>
+                <p>reject(error);</p>
+            </div>
+            <h3>Async Functions</h3>
+            <p>These functions are preceded by the async keyword and allow you to write asynchronous code as if it was
+                synchronous. This is achieved by using the await operator before an asynchronous function. This will
+                wrap
+                the return value of the function in a promise that can then be assigned to a variable.</p>
+            <h3>Function Scope</h3>
+            <p>Whenever a function is defined inside another function, the inner function will have access to any
+                variables
+                that are declared in the outer function's scope.</p>
+            <h2>Ch8: Transforms and Transitions</h2>
+            <h3>Transforms</h3>
+            <p>The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the
+                page.
+                While some of these effects were possible using previously existing CSS features (such as translating
+                with
+                relative and absolute positioning), CSS3 gives you unprecedented control over many more aspects of the
+                element’s appearance.</p>
+            <h3>Translation</h3>
+            <p>Translation functions allow you to move elements left, right, up, or down. These functions are similar to
+                the
+                behavior of position: relative; when declaring top and left, moving elements up and down or left and
+                right
+                along the x and y axes.</p>
+            <h3>Scaling</h3>
+            <p>The scale(x,y) function scales an element by the defined factors horizontally then vertically. If only
+                one
+                value is provided, it will be used for both the x and y values, growing or shrinking your element or
+                pseudo-element while maintaining the original aspect ratio.</p>
+            <h3>Rotation</h3>
+            <p>The rotate() function rotates an element around the point of origin by a specified angle value. As with
+                scale, by default the point of origin is the element’s center. Generally, angles are declared in
+                degrees,
+                with positive degrees moving clockwise and negative moving counterclockwise. In addition to degrees,
+                values
+                can be provided in grads, radians, or turns,</p>
+            <h3>Skew</h3>
+            <p>The skew(x,y) function specifies a skew along the x and y axes.</p>
+            <h3>The transition-duration Property</h3>
+            <p>The transition-duration property sets how long the transition will take: the duration of time it takes to
+                go
+                from the default state to the transitioned state.</p>
         </div>
-        <h3>Temporary Variables</h3>
-        <p>If a variable is only required temporarily, it may cause confusion if it’s still available later in the code.
-            This process requires the use of a temporary variable, called temp, which only exists while the IIFE is
-            invoked.</p>
-        <h3>Promises</h3>
-        <p>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't
-            already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that
-            can result from using multiple callbacks:</p>
-        <div class="code">
-            <p>const promise = new Promise( (resolve, reject) => {</p>
-            <p>initialization code goes here</p>
-            <p>if (success) {</p>
-            <p>resolve(value);</p>
-            <p>} else {</p>
-            <p>reject(error);</p>
-        </div>
-        <h3>Async Functions</h3>
-        <p>These functions are preceded by the async keyword and allow you to write asynchronous code as if it was
-            synchronous. This is achieved by using the await operator before an asynchronous function. This will wrap
-            the return value of the function in a promise that can then be assigned to a variable.</p>
-        <h3>Function Scope</h3>
-        <p>Whenever a function is defined inside another function, the inner function will have access to any variables
-            that are declared in the outer function's scope.</p>
-        <h2>Ch8: Transforms and Transitions</h2>
-        <h3>Transforms</h3>
-        <p>The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.
-            While some of these effects were possible using previously existing CSS features (such as translating with
-            relative and absolute positioning), CSS3 gives you unprecedented control over many more aspects of the
-            element’s appearance.</p>
-        <h3>Translation</h3>
-        <p>Translation functions allow you to move elements left, right, up, or down. These functions are similar to the
-            behavior of position: relative; when declaring top and left, moving elements up and down or left and right
-            along the x and y axes.</p>
-        <h3>Scaling</h3>
-        <p>The scale(x,y) function scales an element by the defined factors horizontally then vertically. If only one
-            value is provided, it will be used for both the x and y values, growing or shrinking your element or
-            pseudo-element while maintaining the original aspect ratio.</p>
-        <h3>Rotation</h3>
-        <p>The rotate() function rotates an element around the point of origin by a specified angle value. As with
-            scale, by default the point of origin is the element’s center. Generally, angles are declared in degrees,
-            with positive degrees moving clockwise and negative moving counterclockwise. In addition to degrees, values
-            can be provided in grads, radians, or turns,</p>
-        <h3>Skew</h3>
-        <p>The skew(x,y) function specifies a skew along the x and y axes.</p>
-        <h3>The transition-duration Property</h3>
-        <p>The transition-duration property sets how long the transition will take: the duration of time it takes to go
-            from the default state to the transitioned state.</p>
-    </div>
 
-    <h1>Week 4 Part 2</h1>
-    <div class="part2">
-        <h2>Getting Started with JSON Web Tokens</h2>
-        <p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for
-            securely transmitting information between parties as a JSON object.</p>
-        <ul>
-            <li>• Compact: Because of its size, it can be sent through an URL, POST parameter, or inside an HTTP header.
-                Additionally, due to its size its transmission is fast.</li>
-            <li>• Self-contained: The payload contains all the required information about the user, to avoid querying
-                the database more than once.</li>
-        </ul>
-        <p>JWTs consist of three parts separated by dots (.), which are:</p>
-        <ul>
-            <li>• Header</li>
-            <li>• Payload</li>
-            <li>• Signature</li>
-        </ul>
-        <h3>Header</h3>
-        <p>The header typically consists of two parts: the type of the token, which is JWT, and the hashing algorithm
-            such as HMAC SHA256 or RSA.</p>
-        <h3>Payload</h3>
-        <p>The second part of the token is the payload, which contains the claims. Claims are statements about an entity
-            (typically, the user) and additional metadata. There are three types of claims: reserved, public, and
-            private claims.</p>
-        <p>Reserved claims: These are a set of predefined claims, which are not mandatory but recommended, thought to
-            provide a set of useful, interoperable claims. Some of them are: iss (issuer), exp (expiration time), sub
-            (subject), aud (audience), among others.</p>
-        <p>Public claims: These can be defined at will by those using JWTs. But to avoid collisions they should be
-            defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant
-            namespace.</p>
-        <p>Private claims: These are the custom claims created to share information between parties that agree on using
-            them.</p>
-        <h3>Signature</h3>
-        <p>To create the signature part you have to take the encoded header, the encoded payload, a secret, the
-            algorithm specified in the header, and sign that.</p>
-        <h3>Develop, Debug, Learn?</h3>
-        <p>Logical development order before: Learn, Develop, Debug. To improve this, we can involve the Leaning while we
-            Develop, that is how we break the loop of boring and stuck developer paradigm. Rethinking tooling…Prevent us
-            from doing things wrong instead of patching up what we created.</p>
-    </div>
+        <h1>Week 4 Part 2</h1>
+        <div class="part2">
+            <h2>Getting Started with JSON Web Tokens</h2>
+            <p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for
+                securely transmitting information between parties as a JSON object.</p>
+            <ul>
+                <li>Compact: Because of its size, it can be sent through an URL, POST parameter, or inside an HTTP
+                    header.
+                    Additionally, due to its size its transmission is fast.</li>
+                <li>Self-contained: The payload contains all the required information about the user, to avoid querying
+                    the database more than once.</li>
+            </ul>
+            <p>JWTs consist of three parts separated by dots (.), which are:</p>
+            <ul>
+                <li>Header</li>
+                <li>Payload</li>
+                <li>Signature</li>
+            </ul>
+            <h3>Header</h3>
+            <p>The header typically consists of two parts: the type of the token, which is JWT, and the hashing
+                algorithm
+                such as HMAC SHA256 or RSA.</p>
+            <h3>Payload</h3>
+            <p>The second part of the token is the payload, which contains the claims. Claims are statements about an
+                entity
+                (typically, the user) and additional metadata. There are three types of claims: reserved, public, and
+                private claims.</p>
+            <p>Reserved claims: These are a set of predefined claims, which are not mandatory but recommended, thought
+                to
+                provide a set of useful, interoperable claims. Some of them are: iss (issuer), exp (expiration time),
+                sub
+                (subject), aud (audience), among others.</p>
+            <p>Public claims: These can be defined at will by those using JWTs. But to avoid collisions they should be
+                defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant
+                namespace.</p>
+            <p>Private claims: These are the custom claims created to share information between parties that agree on
+                using
+                them.</p>
+            <h3>Signature</h3>
+            <p>To create the signature part you have to take the encoded header, the encoded payload, a secret, the
+                algorithm specified in the header, and sign that.</p>
+            <h3>Develop, Debug, Learn?</h3>
+            <p>Logical development order before: Learn, Develop, Debug. To improve this, we can involve the Leaning
+                while we
+                Develop, that is how we break the loop of boring and stuck developer paradigm. Rethinking
+                tooling…Prevent us
+                from doing things wrong instead of patching up what we created.</p>
+        </div>
+    </main>
     <footer>
         <section class="copyrigth">
             <h2> &copy; <span id="currentyear"></span> .:|:. Jessica L. Angulo .:|:. Cochabamba</h2>
