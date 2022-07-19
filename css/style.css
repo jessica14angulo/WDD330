@@ -51,6 +51,9 @@ ul {
     border-bottom-style: groove;
     padding: 1em;
 }
+#homelink {
+    color:white;
+}
 footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
